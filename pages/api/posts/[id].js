@@ -4,12 +4,12 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function handler(req, res) {
-  const cors = await initMiddleware(req, res); // Apply CORS middleware
+  const cors = await initMiddleware(req, res);
 
   const { id } = req.query;
 
   try {
-    await cors; // Ensure CORS headers are set before continuing
+    await cors;
 
     switch (req.method) {
       case 'GET':
