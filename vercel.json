@@ -1,16 +1,7 @@
 {
-  "builds": [
-    { "src": "package.json", "use": "@vercel/node" }
-  ],
   "version": 2,
-  "functions": {
-    "api/**/*.js": {
-      "runtime": "nodejs14.x"
-    }
-  },
-  "hooks": {
-    "build": {
-      "command": "prisma generate"
-    }
-  }
+  "builds": [
+    { "src": "package.json", "use": "@vercel/node" },
+    { "src": "prisma/schema.prisma", "use": "@prisma/cli" }
+  ]
 }
