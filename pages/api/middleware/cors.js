@@ -1,7 +1,9 @@
 import Cors from "cors";
 
 const cors = Cors({
+  origin: '*',
   methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true,
 });
 
 function initMiddleware(middleware) {
