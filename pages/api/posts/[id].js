@@ -1,4 +1,4 @@
-import initMiddleware from '../../middleware/cors';
+import initMiddleware from '../middleware/cors';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
