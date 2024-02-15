@@ -9,6 +9,10 @@ async function handler(req, res) {
   try {
     await cors;
 
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
     switch (req.method) {
       case 'GET':
         const posts = await prisma.post.findMany();
