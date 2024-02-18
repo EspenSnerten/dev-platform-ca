@@ -1,36 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Development platforms – Espen Henriksen Snerten
 
-## Getting Started
+This will serve as my CA Project Report & Rationale, throughout the document I will detail my coding choices and the work process.
 
-First, run the development server:
+I decided to go with Next.js for my routing and endpoints and Vercel storage and a PostgreSQL database using Prisma as my ORM.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The reason I went with Next.js was to challenge myself; this is the first time I'm touching that framework, and I wanted to work with it because the team at Vercel developed it, and that suited me since I was going to use Vercel's storage solution. The code itself is simple. Since we had to demonstrate that the endpoints work, I had to set it up with CORS so that different domains can request the data from the API.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+For the database, I went with Vercel and a PostgreSQL database. I did this because it's fairly straightforward and user-friendly to set up. I used Prisma as my ORM because it offers a highly useful UI using Prisma Studio to check that my tables and their contents look correct, and the template for the database (schema.prisma) was easy and intuitive to understand. It even has a relation set up between the two tables, but I opted to not work on that too much since it was not a requirement for the CA, only optional. I have demonstrated this in my earlier work, i.e., last year's exam.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+I did encounter some problems, mainly that I couldn't connect to the API using my frontend. I worked on it for several hours and went kind of mad, but I got the idea to test if the endpoints worked locally. I thought that it was a code issue, but when the endpoints worked locally, I had my solution: it was Vercel authentication protection and how I had set up the build file. Once I changed that, things worked as they should.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+In conclusion, I have built a backend that has GET, POST, and DELETE endpoints, and I have a boilerplate frontend that demonstrates that it works.
 
-## Learn More
+Link to the frontend repo: https://github.com/EspenSnerten/dev-platform-frontend-ca
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Resources
+https://vercel.com/docs/storage/vercel-postgres/using-an-orm
